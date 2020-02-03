@@ -1,0 +1,51 @@
+@import '../../styles/colors';
+@import '../../styles/unicodeSymbols';
+
+.checkbox {
+  $checkbox-size: 1.1rem;
+  $border-width: 1px;
+
+  @mixin pseudoElement () {
+    position: absolute;
+    width: $checkbox-size;
+    height: $checkbox-size;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border: $border-width solid $inactive-color;
+    border-radius: $border-width * 5;
+  }
+
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    @include pseudoElement;
+
+    content: '';
+    background-color: $white;
+  }
+
+  &::after {
+    @include pseudoElement;
+
+    content: $check-mark;
+    opacity: 0;
+    color: $white;
+    border-color: $active-color;
+    background-color: $active-color;
+    text-align: center;
+    font-size: 1.4rem;
+    line-height: $checkbox-size;
+    vertical-align: center;
+  }
+
+  &.indeterminate:not(:checked)::after {
+    content: '-';
+    opacity: 1;
+  }
+
+  &:checked::after {
+    opacity: 1;
+  }
+}

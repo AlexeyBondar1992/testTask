@@ -1,0 +1,12 @@
+@import '../../styles/colors';
+
+.tree {
+  border: 1px solid $inactive-color;
+  border-bottom: none;
+
+  &, ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+}

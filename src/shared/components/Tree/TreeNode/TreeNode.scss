@@ -1,0 +1,18 @@
+@import '../../../styles/colors';
+
+.treeNode {
+  &.treeNode__group {
+    padding: 0;
+  }
+
+  .treeNodeItem {
+    display: flex;
+    align-items: center;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid $inactive-color;
+  }
+
+  .treeNodeItemCheckbox {
+    margin: 0 1rem;
+  }
+}

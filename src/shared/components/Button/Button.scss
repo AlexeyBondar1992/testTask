@@ -1,0 +1,28 @@
+@import '../../styles/colors';
+
+.button {
+  $border-width: 2px;
+  $min-width: 50px;
+  $min-height: 25px;
+
+  border: $border-width solid $active-color;
+  border-radius: $border-width * 3;
+  min-width: $min-width;
+  min-height: $min-height;
+  background-color: transparent;
+  color: darken($active-color, 10%);
+  transition: color, box-shadow, background-color;
+  transition-duration: 0.15s;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 $border-width * 3 0 darken($active-color, 10%);
+  }
+
+  &:active {
+    color: $white;
+    background-color: $active-color;
+    box-shadow: inset 0 0 $border-width * 5 0 $white;
+  }
+}

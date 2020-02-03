@@ -1,0 +1,14 @@
+@import '../../styles/colors';
+
+.textInput {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  border-bottom: 2px solid $inactive-color;
+
+  &:active,
+  &:focus {
+    border-color: $active-color;
+    outline: none;
+  }
+}
